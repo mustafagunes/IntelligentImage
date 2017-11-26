@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreML // MachineLearning kütüphanesi eklendi.
+import Vision // eklendi.
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate { // eklendi.
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
+
+    var chosenImage = CIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.dismiss(animated: true, completion: nil)
         
         // Bundan sonra info.plist ten izin verdiriyorsun !!
+        
+        if let ciImage = CIImage(image: imageView.image!) { // imageView daki resmi al CIImage ye çevir.
+            
+            self.chosenImage = ciImage
+        }
+        recognizeImage(image: chosenImage)
+    }
+    
+    func recognizeImage(image: CIImage){ // CIImage = CoreImage demek.
+        
+        
     }
 }
 

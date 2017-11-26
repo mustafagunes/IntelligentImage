@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D928694E1FCB38F20085B82F /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = D928694D1FCB38F20085B82F /* select.png */; };
+		D92869501FCB3ADF0085B82F /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D928694F1FCB3ADF0085B82F /* GoogLeNetPlaces.mlmodel */; };
 		D930D3231FCADCDA00945016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930D3221FCADCDA00945016 /* AppDelegate.swift */; };
 		D930D3251FCADCDA00945016 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930D3241FCADCDA00945016 /* ViewController.swift */; };
 		D930D3281FCADCDA00945016 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930D3261FCADCDA00945016 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		D928694D1FCB38F20085B82F /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
+		D928694F1FCB3ADF0085B82F /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 		D930D31F1FCADCDA00945016 /* IntelligentImage(MachineLearning).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IntelligentImage(MachineLearning).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D930D3221FCADCDA00945016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D930D3241FCADCDA00945016 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				D930D3211FCADCDA00945016 /* IntelligentImage(MachineLearning) */,
+				D928694F1FCB3ADF0085B82F /* GoogLeNetPlaces.mlmodel */,
 				D930D3201FCADCDA00945016 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				D930D3251FCADCDA00945016 /* ViewController.swift in Sources */,
 				D930D3231FCADCDA00945016 /* AppDelegate.swift in Sources */,
+				D92869501FCB3ADF0085B82F /* GoogLeNetPlaces.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
