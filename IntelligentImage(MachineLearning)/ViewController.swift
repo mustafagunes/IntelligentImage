@@ -60,13 +60,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     DispatchQueue.main.async { // işlem yaparken uygulama çökmesin diye bunu arkaplanda yaptırıyoruz.
                         
                         let conf = (topResult?.confidence)! * 100 // yüzde kaç ihtimalle doğru birşey yapıyoruz bunu gösterecek.
+                        let rounded = Int(conf * 100) / 100
                         
-                        self.resultLabel.text = "\(conf)% it's \(String(topResult!.identifier))"
+                        self.resultLabel.text = "\(rounded)% it's \(String(topResult!.identifier))"
                     }
                 }
             })
             
-            
+            let handler = VNImageRequestHandler(ciImage: image)
+            DispatchQueue.global(qos: .userInteractive).async {
+                
+                do {
+                    
+                    try handler.perform([request])
+                }
+                catch
+                {
+                    print("Error !")
+                }
+            }
         }
     }
 }
