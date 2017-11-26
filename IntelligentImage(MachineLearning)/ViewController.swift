@@ -47,7 +47,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func recognizeImage(image: CIImage){ // CIImage = CoreImage demek.
         
+        resultLabel.text = "Finding ..."
         
+        if let model = try? VNCoreMLModel(for: GoogLeNetPlaces().model) {
+        
+            let request = VNCoreMLRequest(model: model, completionHandler: { (vnRequest, error) in
+                
+                if let result = vnRequest.results as? [VNClassificationObservation] {
+                    
+                    let topResult = result.first
+                    
+                    DispatchQueue.main.async { // işlem yaparken uygulama çökmesin diye bunu arkaplanda yaptırıyoruz.
+                        
+                        let conf = (topResult?.confidence)! * 100 // yüzde kaç ihtimalle doğru birşey yapıyoruz bunu gösterecek.
+                        
+                        self.resultLabel.text = "\(conf)% it's \(String(topResult!.identifier))"
+                    }
+                }
+            })
+            
+            
+        }
     }
 }
 
